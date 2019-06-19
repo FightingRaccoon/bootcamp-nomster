@@ -1,4 +1,4 @@
-<h1>Post</h1>
+
 <% @places.each do |place| %>
 
   <div class="booyah-box col-10 offset-1">
@@ -10,3 +10,6 @@
     <% end %>
   </div>
 <% end %>
+<div class="digg_pagination paginate_margin">
+<%= will_paginate @places, :page_links => false %>
+</div>
