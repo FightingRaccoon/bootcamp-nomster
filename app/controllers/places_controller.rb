@@ -17,6 +17,7 @@ before_action :authenticate_user!, only: [:new, :create]
   def show
     @place = Place.find(params[:id])
     @comment = Comment.new
+    @picture = Picture.new
   end
   def edit
     @place = Place.find(params[:id])
