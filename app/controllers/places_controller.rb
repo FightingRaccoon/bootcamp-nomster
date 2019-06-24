@@ -49,7 +49,7 @@ before_action :authenticate_user!, only: [:new, :create]
 private
 
 def place_params
-  params.require(:place).permit(:name, :description, :address)
+  params.require(:place).permit(:name, :description, :address,)
 end
 
 end
