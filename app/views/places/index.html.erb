@@ -43,8 +43,8 @@
     <p><%= place.description %></p><br />
     <% if place.user.present? %>
       -<small><%= place.user.email %></small>
-   <% if place.comments.present? %>   
-<div class="col-12">
+   <% if place.comments.present? %>
+
   <blockquote>
     <% if place.comments.last.humanized_rating.present? %>
       <b><%= place.comments.last.humanized_rating %></b> -
@@ -53,22 +53,20 @@
     <br />
     -<small><%= place.comments.last.user.email %></small>
   </blockquote>
-</div>
 <% end %>
 
-<div class="booyah-box">
 <% if place.photos.present? %>
    <blockquote>                        
       <%= image_tag place.photos.first.picture.to_s, class: 'index-image-size' %>
-      <b><%= image_tag place.photos.last.picture.to_s %></b>
+      <b><%= image_tag place.photos.last.picture.to_s, class: 'index-image-size' %></b>
       <b><%= place.photos.last.caption %></b> 
       <small><%= place.photos.last.user.email %></small>
    </blockquote>
 <% end %>
-
     <% end %>
-  </div>
 <% end %>
+</div>
+
 <div class="digg_pagination paginate_margin">
 <%= will_paginate @places, :page_links => false %>
 </div>
